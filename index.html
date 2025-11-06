@@ -16,6 +16,9 @@
         .game-info h2 { color: #ff4500; margin-top: 0; }
         .btn { display: inline-block; padding: 10px 20px; background-color: #ff4500; color: #fff; text-decoration: none; border-radius: 4px; margin-top: 10px; }
         .btn:hover { background-color: #e03c00; }
+        /* 新增：截图预览样式 */
+        .screenshot-preview { margin-top: 10px; font-size: 14px; color: #ccc; }
+        .screenshot-link { color: #ff4500; text-decoration: underline; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -30,6 +33,12 @@
                 <h2>CS:GO</h2>
                 <p>The classic tactical shooter that defined esports</p >
                 Learn More
+                <div class="screenshot-preview">
+                    Preview Screenshot: 
+                    <span class="screenshot-link" onclick="window.open('./images/screenshots/csgo-screenshot.jpg', '_blank')">
+                        View Gameplay
+                    </span>
+                </div>
             </div>
         </div>
         <div class="game-card">
@@ -38,6 +47,12 @@
                 <h2>Valorant</h2>
                 <p>Skills meet gunplay in this fast-paced tactical game</p >
                 Learn More
+                <div class="screenshot-preview">
+                    Preview Screenshot: 
+                    <span class="screenshot-link" onclick="window.open('./images/screenshots/valorant-screenshot.jpg', '_blank')">
+                        View Gameplay
+                    </span>
+                </div>
             </div>
         </div>
         <div class="game-card">
@@ -45,7 +60,13 @@
             <div class="game-info">
                 <h2>Apex Legends</h2>
                 <p>Battle royale chaos with unique legends and teamwork</p >
-                Learn More
+                Learn More>
+                <div class="screenshot-preview">
+                    Preview Screenshot: 
+                    <span class="screenshot-link" onclick="window.open('./images/screenshots/apex-screenshot.jpg', '_blank')">
+                        View Gameplay
+                    </span>
+                </div>
             </div>
         </div>
     </div>
