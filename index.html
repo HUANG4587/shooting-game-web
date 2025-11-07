@@ -5,34 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Top Shooting Games 2024</title>
     <style>
-        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #1a1a1a; color: #fff; }
-        .header { background-color: #2d2d2d; padding: 20px; text-align: center; }
-        .header h1 { margin: 0; color: #ff4500; }
-        .game-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; padding: 40px; max-width: 1200px; margin: 0 auto; }
-        .game-card { background-color: #2d2d2d; border-radius: 8px; overflow: hidden; transition: transform 0.3s; }
-        .game-card:hover { transform: translateY(-10px); }
-        .game-img { width: 100%; height: 200px; object-fit: cover; }
-        .game-info { padding: 20px; text-align: center; }
-        .game-info h2 { color: #ff4500; margin-top: 0; }
-        .btn { display: inline-block; padding: 10px 20px; background-color: #ff4500; color: #fff; text-decoration: none; border-radius: 4px; margin-top: 10px; }
-        .btn:hover { background-color: #e03c00; }
-        /* 新增：截图预览样式 */
-        .screenshot-preview { margin-top: 10px; font-size: 14px; color: #ccc; }
-        .screenshot-link { color: #ff4500; text-decoration: underline; cursor: pointer; }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #1a1a1a; 
+            color: #fff; 
+            line-height: 1.6;
+        }
+        .header { 
+            background-color: #2d2d2d; 
+            padding: 30px 20px; 
+            text-align: center; 
+            border-bottom: 2px solid #ff4500;
+        }
+        .header h1 { 
+            margin: 0 0 10px; 
+            color: #ff4500; 
+            font-size: 2.2rem;
+        }
+        .header p { 
+            margin: 0; 
+            color: #ccc; 
+            font-size: 1.1rem;
+        }
+        .game-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            padding: 40px 20px; 
+            max-width: 1400px; 
+            margin: 0 auto;
+        }
+        .game-card { 
+            background-color: #2d2d2d; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        .game-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+        }
+        .game-img { 
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .game-card:hover .game-img {
+            transform: scale(1.05);
+        }
+        /* 图片加载失败兜底样式 */
+        .game-img[src$="404"] {
+            object-fit: contain;
+            background-color: #333;
+            content: "Image Unavailable";
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff4500;
+            font-weight: bold;
+        }
+        .game-info { 
+            padding: 25px; 
+            text-align: center;
+        }
+        .game-info h2 { 
+            color: #ff4500; 
+            margin-top: 0; 
+            margin-bottom: 10px;
+        }
+        .game-tags {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        .tag {
+            background-color: #3d3d3d;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #eee;
+        }
+        .tag.tactical {
+            background-color: #ff4500;
+            color: #fff;
+        }
+        .game-meta {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        .btn { 
+            display: inline-block; 
+            padding: 10px 25px; 
+            background-color: #ff4500; 
+            color: #fff; 
+            text-decoration: none; 
+            border-radius: 4px; 
+            margin-top: 10px; 
+            transition: background-color 0.3s ease;
+            font-weight: 500;
+        }
+        .btn:hover { 
+            background-color: #e03c00; 
+            transform: scale(1.05);
+        }
+        .screenshot-preview { 
+            margin-top: 15px; 
+            font-size: 14px; 
+            color: #ccc;
+        }
+        .screenshot-link { 
+            color: #ff4500; 
+            text-decoration: underline; 
+            cursor: pointer; 
+            transition: color 0.2s ease;
+        }
+        .screenshot-link:hover {
+            color: #e03c00;
+            text-decoration: none;
+        }
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .game-grid {
+                gap: 20px;
+                padding: 20px 15px;
+            }
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .game-info {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="header">
         <h1>Must-Play Shooting Games for Competitive Gamers</h1>
-        <p>Choose your battlefield and master the art of precision</p >
+        <p>Choose your battlefield and master the art of precision</p>
     </div>
     <div class="game-grid">
+        <!-- CS:GO 卡片 -->
         <div class="game-card">
-            <img src="images/cover/csgo-cover.jpg" alt="CS:GO Cover" class="game-img">
+            <a href="csgo-details.html">
+                <img src="images/cover/csgo-cover.jpg" alt="CS:GO Cover" class="game-img" onerror="this.src='https://via.placeholder.com/600x400?text=CS:GO+Cover'; this.onerror='';">
+            </a>
             <div class="game-info">
                 <h2>CS:GO</h2>
-                <p>The classic tactical shooter that defined esports</p >
-                Learn More
+                <p>The classic tactical shooter that defined esports</p>
+                <div class="game-meta">PC / PS4 / Xbox One | 9.2/10</div>
+                <div class="game-tags">
+                    <span class="tag tactical">Tactical</span>
+                    <span class="tag">Esports</span>
+                    <span class="tag">5v5</span>
+                </div>
+                <a href="https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/" target="_blank" class="btn">Learn More</a>
                 <div class="screenshot-preview">
                     Preview Screenshot: 
                     <span class="screenshot-link" onclick="window.open('./images/screenshots/csgo-screenshot.jpg', '_blank')">
@@ -41,12 +175,22 @@
                 </div>
             </div>
         </div>
+
+        <!-- Valorant 卡片 -->
         <div class="game-card">
-            <img src="images/cover/valorant-cover.jpg" alt="Valorant Cover" class="game-img">
+            <a href="valorant-details.html">
+                <img src="images/cover/valorant-cover.jpg" alt="Valorant Cover" class="game-img" onerror="this.src='https://via.placeholder.com/600x400?text=Valorant+Cover'; this.onerror='';">
+            </a>
             <div class="game-info">
                 <h2>Valorant</h2>
-                <p>Skills meet gunplay in this fast-paced tactical game</p >
-                Learn More
+                <p>Skills meet gunplay in this fast-paced tactical game</p>
+                <div class="game-meta">PC | 8.8/10</div>
+                <div class="game-tags">
+                    <span class="tag tactical">Tactical</span>
+                    <span class="tag">Agents</span>
+                    <span class="tag">FPS</span>
+                </div>
+                <a href="https://playvalorant.com/" target="_blank" class="btn">Learn More</a>
                 <div class="screenshot-preview">
                     Preview Screenshot: 
                     <span class="screenshot-link" onclick="window.open('./images/screenshots/valorant-screenshot.jpg', '_blank')">
@@ -55,12 +199,22 @@
                 </div>
             </div>
         </div>
+
+        <!-- Apex Legends 卡片 -->
         <div class="game-card">
-            <img src="images/cover/apex-cover.jpg" alt="Apex Legends Cover" class="game-img">
+            <a href="apex-details.html">
+                <img src="images/cover/apex-cover.jpg" alt="Apex Legends Cover" class="game-img" onerror="this.src='https: //via.placeholder.com/600x400?text=Apex+Legends+Cover'; this.onerror='';">
+            </a>
             <div class="game-info">
                 <h2>Apex Legends</h2>
-                <p>Battle royale chaos with unique legends and teamwork</p >
-                Learn More>
+                <p>Battle royale chaos with unique legends and teamwork</p>
+                <div class="game-meta">Multi-Platform | 9.0/10</div>
+                <div class="game-tags">
+                    <span class="tag">Battle Royale</span>
+                    <span class="tag">Teamwork</span>
+                    <span class="tag">Hero Shooter</span>
+                </div>
+                <a href="https://www.ea.com/games/apex-legends" target="_blank" class="btn">Learn More</a>
                 <div class="screenshot-preview">
                     Preview Screenshot: 
                     <span class="screenshot-link" onclick="window.open('./images/screenshots/apex-screenshot.jpg', '_blank')">
