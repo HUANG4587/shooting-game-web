@@ -10,37 +10,43 @@
         .header h1 { margin: 0; color: #ff6b6b; }
         .back-btn { display: inline-block; margin: 20px; padding: 8px 16px; background-color: #2d2d2d; color: #fff; text-decoration: none; border-radius: 4px; }
         .back-btn:hover { background-color: #444; }
-        .game-details { max-width: 1000px; margin: 0 auto; padding: 20px; display: flex; gap: 40px; }
-        .game-pic { width: 40%; border-radius: 8px; }
-        .details-text { width: 60%; }
+        .game-details { max-width: 1000px; margin: 0 auto; padding: 20px; display: flex; gap: 40px; flex-wrap: wrap; }
+        .game-pic { width: 40%; min-width: 300px; border-radius: 8px; }
+        .details-text { width: 60%; min-width: 300px; }
         .key-feature { background-color: #2d2d2d; padding: 15px; margin: 10px 0; border-left: 4px solid #ff6b6b; border-radius: 4px; }
         .key-feature h3 { margin-top: 0; color: #ff6b6b; }
+        
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .game-pic, .details-text { width: 100%; }
+            .game-details { gap: 20px; padding: 15px; }
+        }
     </style>
 </head>
 <body>
-    ← Back to Homepage
+    <a href="index.html" class="back-btn">← Back to Homepage</a>
     <div class="header">
         <h1>Apex Legends</h1>
-        <p>Battle Royale with Teamwork and Legendary Characters</p >
+        <p>Battle Royale with Teamwork and Legendary Characters</p>
     </div>
     <div class="game-details">
-        < img src="apex1.jpg" alt="Apex Legends Gameplay" class="game-pic">
+        <img src="images/gameplay/apex1.jpg" alt="Apex Legends Gameplay" class="game-pic" onerror="this.src='https: //via.placeholder.com/600x800?text=Apex+Legends+Gameplay'; this.onerror='';">
         <div class="details-text">
-            <p>Released by Respawn Entertainment in 2019, Apex Legends redefined battle royale with its focus on 3-player squads, unique "Legends," and fast-paced movement.</p >
+            <p>Released by Respawn Entertainment in 2019, Apex Legends redefined battle royale with its focus on 3-player squads, unique "Legends," and fast-paced movement.</p>
             
             <div class="key-feature">
                 <h3>Legends & Teamwork</h3>
-                <p>30+ Legends with distinct passive, tactical, and ultimate abilities. For example, Wraith can phase through walls, while Gibraltar deploys a defensive dome. Success depends on synergizing squad members’ skills.</p >
+                <p>30+ Legends with distinct passive, tactical, and ultimate abilities. For example, Wraith can phase through walls, while Gibraltar deploys a defensive dome. Success depends on synergizing squad members’ skills.</p>
             </div>
             
             <div class="key-feature">
                 <h3>Gameplay Mechanics</h3>
-                <p>Matches start with 60 players (20 squads) dropping onto a shrinking map. Players loot weapons, armor, and items, then fight to be the last squad standing. The "Apex Jump" and sliding mechanics add dynamic movement.</p >
+                <p>Matches start with 60 players (20 squads) dropping onto a shrinking map. Players loot weapons, armor, and items, then fight to be the last squad standing. The "Apex Jump" and sliding mechanics add dynamic movement.</p>
             </div>
             
             <div class="key-feature">
                 <h3>Live Service & Updates</h3>
-                <p>Free-to-play with seasonal "Battles Passes" (cosmetics and rewards). Regular updates introduce new Legends, maps, and game modes (like "Control" or "Arenas"), keeping the game fresh year-round.</p >
+                <p>Free-to-play with seasonal "Battles Passes" (cosmetics and rewards). Regular updates introduce new Legends, maps, and game modes (like "Control" or "Arenas"), keeping the game fresh year-round.</p>
             </div>
         </div>
     </div>

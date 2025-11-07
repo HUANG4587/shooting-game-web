@@ -10,37 +10,43 @@
         .header h1 { margin: 0; color: #76b900; }
         .back-btn { display: inline-block; margin: 20px; padding: 8px 16px; background-color: #2d2d2d; color: #fff; text-decoration: none; border-radius: 4px; }
         .back-btn:hover { background-color: #444; }
-        .game-details { max-width: 1000px; margin: 0 auto; padding: 20px; display: flex; gap: 40px; flex-direction: row-reverse; }
-        .game-pic { width: 40%; border-radius: 8px; }
-        .details-text { width: 60%; }
+        .game-details { max-width: 1000px; margin: 0 auto; padding: 20px; display: flex; gap: 40px; flex-direction: row-reverse; flex-wrap: wrap; }
+        .game-pic { width: 40%; min-width: 300px; border-radius: 8px; }
+        .details-text { width: 60%; min-width: 300px; }
         .key-feature { background-color: #2d2d2d; padding: 15px; margin: 10px 0; border-left: 4px solid #76b900; border-radius: 4px; }
         .key-feature h3 { margin-top: 0; color: #76b900; }
+        
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            .game-pic, .details-text { width: 100%; }
+            .game-details { gap: 20px; padding: 15px; flex-direction: column; }
+        }
     </style>
 </head>
 <body>
-    ← Back to Homepage
+    <a href="index.html" class="back-btn">← Back to Homepage</a>
     <div class="header">
         <h1>Valorant</h1>
-        <p>Tactical FPS with Unique Agent Abilities</p >
+        <p>Tactical FPS with Unique Agent Abilities</p>
     </div>
     <div class="game-details">
-        < img src="valorant1.jpg" alt="Valorant Gameplay" class="game-pic">
+        <img src="images/gameplay/valorant1.jpg" alt="Valorant Gameplay" class="game-pic" onerror="this.src='https： //via.placeholder.com/600x800?text=Valorant+Gameplay'; this.onerror='';">
         <div class="details-text">
-            <p>Developed by Riot Games (creators of League of Legends), Valorant launched in 2020 and blends classic tactical shooting with hero-based abilities—creating a fresh, competitive experience.</p >
+            <p>Developed by Riot Games (creators of League of Legends), Valorant launched in 2020 and blends classic tactical shooting with hero-based abilities—creating a fresh, competitive experience.</p>
             
             <div class="key-feature">
                 <h3>Agents & Abilities</h3>
-                <p>Choose from 25+ Agents, each with 4 unique abilities (1 Ultimate, 2 Basic, 1 Signature). Abilities range from smoke screens (Cypher) to healing orbs (Sage), adding strategy beyond just gun skill.</p >
+                <p>Choose from 25+ Agents, each with 4 unique abilities (1 Ultimate, 2 Basic, 1 Signature). Abilities range from smoke screens (Cypher) to healing orbs (Sage), adding strategy beyond just gun skill.</p>
             </div>
             
             <div class="key-feature">
                 <h3>Game Modes</h3>
-                <p>Primary mode: "Unrated" or "Ranked" (5v5, bomb defusal). Other modes include "Deathmatch" (fast-paced practice) and "Spike Rush" (simplified, quick matches with pre-unlocked abilities).</p >
+                <p>Primary mode: "Unrated" or "Ranked" (5v5, bomb defusal). Other modes include "Deathmatch" (fast-paced practice) and "Spike Rush" (simplified, quick matches with pre-unlocked abilities).</p>
             </div>
             
             <div class="key-feature">
                 <h3>Competitive Edge</h3>
-                <p>Low latency (optimized for PC) and strict anti-cheat (Vanguard) make it a top choice for competitive players. Esports events like Valorant Champions Tour (VCT) offer $10 million+ annual prize pools.</p >
+                <p>Low latency (optimized for PC) and strict anti-cheat (Vanguard) make it a top choice for competitive players. Esports events like Valorant Champions Tour (VCT) offer $10 million+ annual prize pools.</p>
             </div>
         </div>
     </div>

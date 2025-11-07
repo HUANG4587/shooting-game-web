@@ -10,37 +10,42 @@
         .header h1 { margin: 0; color: #00bfff; }
         .back-btn { display: inline-block; margin: 20px; padding: 8px 16px; background-color: #2d2d2d; color: #fff; text-decoration: none; border-radius: 4px; }
         .back-btn:hover { background-color: #444; }
-        .game-details { max-width: 1000px; margin: 0 auto; padding: 20px; display: flex; gap: 40px; }
-        .game-pic { width: 40%; border-radius: 8px; }
-        .details-text { width: 60%; }
+        .game-details { max-width: 1000px; margin: 0 auto; padding: 20px; display: flex; gap: 40px; flex-wrap: wrap; }
+        .game-pic { width: 40%; min-width: 300px; border-radius: 8px; }
+        .details-text { width: 60%; min-width: 300px; }
         .key-feature { background-color: #2d2d2d; padding: 15px; margin: 10px 0; border-left: 4px solid #00bfff; border-radius: 4px; }
         .key-feature h3 { margin-top: 0; color: #00bfff; }
+        
+        @media (max-width: 768px) {
+            .game-pic, .details-text { width: 100%; }
+            .game-details { gap: 20px; padding: 15px; }
+        }
     </style>
 </head>
 <body>
-    ← Back to Homepage
+    <a href="index.html" class="back-btn">← Back to Homepage</a>
     <div class="header">
         <h1>Counter-Strike: Global Offensive (CS:GO)</h1>
-        <p>Where Strategy and Precision Collide</p >
+        <p>Where Strategy and Precision Collide</p>
     </div>
     <div class="game-details">
-        < img src="csgo1.jpg" alt="CS:GO Gameplay" class="game-pic">
+        <img src="images/gameplay/csgo1.jpg" alt="CS:GO Gameplay" class="game-pic" onerror="this.src='https: //via.placeholder.com/600x800?text=CS:GO+Gameplay'; this.onerror='';">
         <div class="details-text">
-            <p>First released in 2012, CS:GO remains a cornerstone of competitive esports. As a tactical first-person shooter (FPS), it pits two teams—Terrorists and Counter-Terrorists—against each other in objective-based matches.</p >
+            <p>First released in 2012, CS:GO remains a cornerstone of competitive esports. As a tactical first-person shooter (FPS), it pits two teams—Terrorists and Counter-Terrorists—against each other in objective-based matches.</p>
             
             <div class="key-feature">
                 <h3>Core Gameplay</h3>
-                <p>Matches revolve around planting/defusing bombs (Bomb scenarios) or rescuing hostages. Players earn in-game currency to buy weapons, armor, and utilities (like grenades) each round, rewarding smart economy management.</p >
+                <p>Matches revolve around planting/defusing bombs (Bomb scenarios) or rescuing hostages. Players earn in-game currency to buy weapons, armor, and utilities (like grenades) each round, rewarding smart economy management.</p>
             </div>
             
             <div class="key-feature">
                 <h3>Esports Legacy</h3>
-                <p>Home to major tournaments like the Intel Extreme Masters (IEM) and PGL Major, with prize pools exceeding $2 million. Teams like NAVI and FaZe Clan have become global icons in the CS:GO scene.</p >
+                <p>Home to major tournaments like the Intel Extreme Masters (IEM) and PGL Major, with prize pools exceeding $2 million. Teams like NAVI and FaZe Clan have become global icons in the CS:GO scene.</p>
             </div>
             
             <div class="key-feature">
                 <h3>Accessibility</h3>
-                <p>Free-to-play on Steam, with optional cosmetic skins for weapons. Supports cross-platform play between PC and console, and offers a casual mode for new players to learn the ropes.</p >
+                <p>Free-to-play on Steam, with optional cosmetic skins for weapons. Supports cross-platform play between PC and console, and offers a casual mode for new players to learn the ropes.</p>
             </div>
         </div>
     </div>
